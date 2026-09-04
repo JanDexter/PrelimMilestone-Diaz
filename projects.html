@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jan Dexter Diaz — Projects</title>
+  <meta name="description" content="A live gallery of GitHub repositories fetched from the GitHub REST API, with search, sorting, pagination, and bookmarking.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header>
+    <nav class="navbar site-nav" role="navigation" aria-label="Main navigation">
+      <div class="shell navbar-shell">
+        <div class="navbar-brand">
+          <a class="navbar-item brand-mark" href="home.html">
+            <span class="brand-badge" aria-hidden="true">JD</span>
+            <span>Jan Dexter Diaz</span>
+          </a>
+          <button type="button" class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNavbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="home.html">Home</a>
+            <a class="navbar-item" href="about.html">About Me</a>
+            <a class="navbar-item is-active" href="projects.html" aria-current="page">Projects</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <section class="page-header" aria-labelledby="projectsHeading">
+      <div class="shell">
+        <p class="section-eyebrow">Projects</p>
+        <h1 id="projectsHeading" class="title is-2 section-heading">My GitHub Repositories</h1>
+        <p class="section-lead is-centered">
+          Live data pulled straight from the GitHub REST API. Search by name, sort
+          and filter, bookmark your favourites, and page through the results.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search & filter controls -->
+    <section class="shell" aria-labelledby="controlsHeading">
+      <h2 id="controlsHeading" class="is-sr-only">Search and filter projects</h2>
+
+      <div class="gallery-controls">
+        <div class="field">
+          <label class="label is-sr-only" for="searchInput">Search projects by name</label>
+          <div class="control has-icons-left">
+            <input class="input is-medium" type="search" id="searchInput"
+                   placeholder="Search projects by name…" autocomplete="off">
+            <span class="icon is-left" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+        </div>
+
+        <div class="filters-row">
+          <div class="control">
+            <div class="select is-small">
+              <select id="sortSelect" aria-label="Sort results by">
+                <option value="updated">Sort: Recently updated</option>
+                <option value="created">Sort: Recently created</option>
+                <option value="pushed">Sort: Recently pushed</option>
+                <option value="full_name">Sort: Name</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control">
+            <div class="select is-small">
+              <select id="directionSelect" aria-label="Sort direction">
+                <option value="desc">Direction: Descending</option>
+                <option value="asc">Direction: Ascending</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control">
+            <div class="select is-small">
+              <select id="typeSelect" aria-label="Repository type">
+                <option value="owner">Type: Owner</option>
+                <option value="all">Type: All</option>
+                <option value="member">Type: Member</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control">
+            <div class="select is-small">
+              <select id="perPageSelect" aria-label="Results per page">
+                <option value="6">6 per page</option>
+                <option value="9">9 per page</option>
+                <option value="12">12 per page</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control">
+            <label class="checkbox" for="bookmarkedOnly">
+              <input type="checkbox" id="bookmarkedOnly">
+              <span>Bookmarked only</span>
+            </label>
+          </div>
+
+          <div class="control">
+            <button class="button is-small is-primary is-light" id="refreshBtn" type="button">
+              <span class="icon"><i class="fa-solid fa-rotate"></i></span>
+              <span>Refresh</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-bar">
+        <p id="resultsCount" aria-live="polite">Loading repositories…</p>
+        <p class="data-source-tag" id="dataSource">
+          <span class="icon is-small" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-down"></i></span>
+          <span id="dataSourceText">GitHub REST API</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Loading / error / empty states -->
+    <section class="shell gallery-status" aria-live="polite">
+      <h2 class="is-sr-only">Gallery status</h2>
+
+      <div id="loadingSpinner" class="spinner" role="status" aria-label="Loading repositories" hidden></div>
+
+      <div id="errorMessage" class="notification is-warning" role="alert" hidden>
+        <span class="icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        <span id="errorText"></span>
+      </div>
+
+      <div id="emptyMessage" class="state-panel" hidden>
+        <p class="state-icon" aria-hidden="true"><i class="fa-solid fa-folder-open"></i></p>
+        <p><strong>No projects match your search.</strong></p>
+        <p>Try a different keyword or clear the bookmarked-only filter.</p>
+      </div>
+    </section>
+
+    <!-- The gallery: every card is created in JavaScript (no hardcoded markup) -->
+    <section class="shell" aria-labelledby="galleryHeading">
+      <h2 id="galleryHeading" class="is-sr-only">Project gallery</h2>
+      <div id="projectsGrid" class="projects-grid"></div>
+    </section>
+
+    <nav class="shell pagination-wrap" role="navigation" aria-label="Project pagination">
+      <div class="pagination is-centered" role="navigation" aria-label="pagination">
+        <button class="pagination-previous" id="prevPageBtn" type="button">
+          <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+          <span>Previous</span>
+        </button>
+        <button class="pagination-next" id="nextPageBtn" type="button">
+          <span>Next</span>
+          <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+        <ul class="pagination-list">
+          <li><span id="pageIndicator" aria-live="polite">Page 1</span></li>
+        </ul>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Jan Dexter Diaz</p>
+        <p>&copy; <span id="footerYear"></span> All rights reserved.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/JanDexter" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:jandexterndiaz@gmail.com" aria-label="Send an email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

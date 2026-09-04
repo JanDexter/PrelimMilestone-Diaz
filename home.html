@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jan Dexter Diaz — Home</title>
+  <meta name="description" content="Portfolio home page for Jan Dexter Diaz, a Computer Science student and web developer building accessible, responsive interfaces.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header>
+    <nav class="navbar site-nav" role="navigation" aria-label="Main navigation">
+      <div class="shell navbar-shell">
+        <div class="navbar-brand">
+          <a class="navbar-item brand-mark" href="home.html">
+            <span class="brand-badge" aria-hidden="true">JD</span>
+            <span>Jan Dexter Diaz</span>
+          </a>
+          <button type="button" class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNavbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active" href="home.html" aria-current="page">Home</a>
+            <a class="navbar-item" href="about.html">About Me</a>
+            <a class="navbar-item" href="projects.html">Projects</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero -->
+    <section class="hero-section" aria-labelledby="heroHeading">
+      <div class="shell hero-flex">
+        <div class="hero-copy">
+          <p class="section-eyebrow">Hi, I'm</p>
+          <h1 id="heroHeading" class="title hero-name">Jan Dexter Diaz</h1>
+          <p class="subtitle is-5">Cloud-focused Product Engineer</p>
+          <p class="hero-blurb">
+            Freelance software engineer, product engineer, and digital artist crafting performant products enriched with visual storytelling. Currently based in Davao City, collaborating with startups, communities, and NGOs to provide them with
+            accessible, responsive interfaces powered by real APIs.
+          </p>
+
+          <div class="hero-cta">
+            <a class="button is-primary is-medium" href="projects.html">
+              <span class="icon"><i class="fa-solid fa-folder-open"></i></span>
+              <span>View My Projects</span>
+            </a>
+            <a class="button is-medium" href="about.html">
+              <span class="icon"><i class="fa-solid fa-user"></i></span>
+              <span>About Me</span>
+            </a>
+          </div>
+
+          <ul class="hero-stats">
+            <li>
+              <span class="stat-value">7+</span>
+              <span class="stat-label">Products Shipped</span>
+            </li>
+            <li>
+              <span class="stat-value">AWS-focused</span>
+              <span class="stat-label">AWS-trained cloud builder</span>
+            </li>
+            <li>
+              <span class="stat-value">5+</span>
+              <span class="stat-label">Communities grown</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-illustration">
+          <img src="assets/hero.png"
+               alt="Photo of Jan Dexter Diaz"
+               width="300" height="534">
+        </div>
+      </div>
+    </section>
+
+    <!-- What I work with -->
+    <section class="highlights" aria-labelledby="highlightsHeading">
+      <div class="shell">
+        <p class="section-eyebrow">What I work with</p>
+        <h2 id="highlightsHeading" class="title is-3 section-heading">Skills I'm building</h2>
+        <p class="section-lead">
+          Cloud-first work on AWS, paired with coursework and side projects across
+          the web stack — with an emphasis on standards and accessibility.
+        </p>
+
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <div class="icon-chip" aria-hidden="true"><i class="fa-brands fa-aws fa-lg"></i></div>
+            <h3>Cloud &amp; AWS</h3>
+            <p>Serverless, event-driven backends on AWS — Lambda, SQS, Aurora Serverless v2, and ElastiCache, provisioned with AWS CDK.</p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="icon-chip" aria-hidden="true"><i class="fa-solid fa-server fa-lg"></i></div>
+            <h3>APIs &amp; Data</h3>
+            <p>Designing and consuming REST APIs with fetch and async/await, then rendering dynamic UIs from the response.</p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="icon-chip" aria-hidden="true"><i class="fa-solid fa-code fa-lg"></i></div>
+            <h3>Frontend &amp; a11y</h3>
+            <p>HTML5, CSS3 with Grid &amp; Flexbox, TypeScript, semantic landmarks, and keyboard-friendly interfaces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="shell" aria-labelledby="ctaHeading">
+      <div class="cta-band">
+        <h2 id="ctaHeading" class="title is-4">See what I've been building</h2>
+        <p>My Projects page pulls repositories live from the GitHub REST API — searchable, sortable, and bookmarkable.</p>
+        <a class="button is-medium" href="projects.html">
+          <span class="icon"><i class="fa-brands fa-github"></i></span>
+          <span>Browse the gallery</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Jan Dexter Diaz</p>
+        <p>&copy; <span id="footerYear"></span> All rights reserved.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/JanDexter" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:jandexterndiaz@gmail.com" aria-label="Send an email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

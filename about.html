@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jan Dexter Diaz — About Me</title>
+  <meta name="description" content="About Jan Dexter Diaz — background, skills, education, experience, and a contact form.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header>
+    <nav class="navbar site-nav" role="navigation" aria-label="Main navigation">
+      <div class="shell navbar-shell">
+        <div class="navbar-brand">
+          <a class="navbar-item brand-mark" href="home.html">
+            <span class="brand-badge" aria-hidden="true">JD</span>
+            <span>Jan Dexter Diaz</span>
+          </a>
+          <button type="button" class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNavbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="home.html">Home</a>
+            <a class="navbar-item is-active" href="about.html" aria-current="page">About Me</a>
+            <a class="navbar-item" href="projects.html">Projects</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <!-- Intro -->
+    <section class="about-section" aria-labelledby="aboutHeading">
+      <div class="shell about-grid">
+        <div class="about-photo">
+          <img src="assets/hero.png"
+               alt="Portrait photo of Jan Dexter Diaz"
+               width="240" height="427">
+        </div>
+
+        <div class="about-copy">
+          <p class="section-eyebrow">About Me</p>
+          <h1 id="aboutHeading" class="title is-2 section-heading">Jan Dexter Diaz</h1>
+          <p>
+            I'm JD, a developer, illustrator, and community builder. I thrive in the sweet spot between product thinking and execution — building and selling software solutions teams actually run on instead of one-size-fits-all frameworks.
+
+          </p>
+          <p>
+            My work spans full-stack development, operational automation, and creative and executive leadership for communities and NGOs across the Philippines.
+          </p>
+
+          <h2 class="subheading">Cloud &amp; AWS</h2>
+          <ul class="skills-list">
+            <li>AWS CDK</li>
+            <li>AWS Lambda</li>
+            <li>Amazon API Gateway</li>
+            <li>Aurora Serverless v2</li>
+            <li>RDS Proxy</li>
+            <li>Amazon SQS</li>
+            <li>ElastiCache</li>
+            <li>Amazon S3 &amp; CloudFront</li>
+            <li>Serverless architecture</li>
+          </ul>
+
+          <h2 class="subheading">Web &amp; Fundamentals</h2>
+          <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3 — Grid &amp; Flexbox</li>
+            <li>JavaScript (ES6+)</li>
+            <li>TypeScript</li>
+            <li>Bulma</li>
+            <li>REST APIs</li>
+            <li>Git &amp; GitHub</li>
+            <li>Accessibility (a11y)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & experience -->
+    <section class="timeline-section" aria-labelledby="timelineHeading">
+      <div class="shell">
+        <p class="section-eyebrow">Background</p>
+        <h2 id="timelineHeading" class="title is-3 section-heading">Education &amp; Experience</h2>
+
+        <div class="timeline-grid">
+          <article class="timeline-card">
+            <h3>
+              <span class="icon-chip" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+              Education
+            </h3>
+            <ul>
+              <li>
+                <strong>BS Computer Science</strong>
+                Coursework in web development, data structures, and software engineering.
+              </li>
+              <li>
+                <strong>Self-directed learning</strong>
+                Modern frontend tooling, API integration, and accessibility practices.
+              </li>
+            </ul>
+          </article>
+
+          <article class="timeline-card">
+            <h3>
+              <span class="icon-chip" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+              Experience
+            </h3>
+            <ul>
+              <li>
+                <strong>Cloud &amp; AWS projects</strong>
+                Built serverless, event-driven backends on AWS, provisioned with
+                AWS CDK and load-tested for concurrency.
+              </li>
+              <li>
+                <strong>API-driven interfaces</strong>
+                Consumed public REST APIs and rendered dynamic, data-driven UIs.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <section class="contact-section" aria-labelledby="contactHeading">
+      <div class="shell">
+        <div class="contact-card">
+          <p class="section-eyebrow has-text-centered">Get in touch</p>
+          <h2 id="contactHeading" class="title is-3 has-text-centered section-heading">Contact Me</h2>
+          <p class="section-lead is-centered">
+            Have a question or want to work together? Send a message below.
+          </p>
+
+          <div id="formNotification" class="notification is-success" hidden role="status">
+            <button type="button" class="delete" id="closeNotification" aria-label="Close notification"></button>
+            <span id="formNotificationText"></span>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label class="label" for="contactName">Full Name</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text" id="contactName" name="name" required
+                       autocomplete="name" placeholder="Juan Dela Cruz" aria-describedby="nameError">
+                <span class="icon is-small is-left" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+              </div>
+              <p class="help is-danger" id="nameError" hidden>Please enter your full name.</p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="contactEmail">Email Address</label>
+              <div class="control has-icons-left">
+                <input class="input" type="email" id="contactEmail" name="email" required
+                       autocomplete="email" placeholder="you@example.com" aria-describedby="emailError">
+                <span class="icon is-small is-left" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+              </div>
+              <p class="help is-danger" id="emailError" hidden>Please enter a valid email address.</p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="contactPhone">Phone Number</label>
+              <div class="control has-icons-left">
+                <input class="input" type="tel" id="contactPhone" name="phone" required
+                       autocomplete="tel" placeholder="0917 123 4567"
+                       aria-describedby="phoneHint phoneError">
+                <span class="icon is-small is-left" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              </div>
+              <p class="form-hint" id="phoneHint">Philippine mobile format: 09XXXXXXXXX or +639XXXXXXXXX.</p>
+              <p class="help is-danger" id="phoneError" hidden>Enter a valid PH mobile number, e.g. 09171234567 or +639171234567.</p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="contactMessage">Message</label>
+              <div class="control">
+                <textarea class="textarea" id="contactMessage" name="message" rows="4" required
+                          placeholder="Tell me about your project or question…"
+                          aria-describedby="messageError"></textarea>
+              </div>
+              <p class="help is-danger" id="messageError" hidden>Please enter a message.</p>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-primary is-fullwidth is-medium">
+                  <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+                  <span>Send Message</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Jan Dexter Diaz</p>
+        <p>&copy; <span id="footerYear"></span> All rights reserved.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/JanDexter" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:jandexterndiaz@gmail.com" aria-label="Send an email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
