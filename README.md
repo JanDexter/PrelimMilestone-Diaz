@@ -64,6 +64,3 @@ No build step required — everything is static HTML/CSS/JS.
 - Vanilla JavaScript (no frameworks)
 - [GitHub REST API](https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user)
 
-## Repo link
-
-_Add your GitHub repository URL here before submitting._
